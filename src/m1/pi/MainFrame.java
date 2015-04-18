@@ -56,6 +56,11 @@ public class MainFrame extends javax.swing.JFrame {
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jToolBar1.add(jButton1);
 
         jButton2.setText("Edit contact");
@@ -74,6 +79,7 @@ public class MainFrame extends javax.swing.JFrame {
         jToolBar1.add(jTextField1);
 
         jTextPane1.setEditable(false);
+        jTextPane1.setText("Selected contact: Toto Toto");
         jScrollPane1.setViewportView(jTextPane1);
 
         jMenu1.setText("File");
@@ -143,6 +149,10 @@ public class MainFrame extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        new ContactDialog().show();
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
